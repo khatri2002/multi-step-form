@@ -1,0 +1,110 @@
+.main {
+  @apply bg-magnolia flex min-h-screen items-center justify-center;
+
+  .box {
+    @apply flex rounded-xl bg-white p-4;
+    height: 37.5rem;
+
+    .sidebarContainer {
+      background-image: url("../../assets/images/bg-sidebar-desktop.svg");
+      @apply h-full bg-contain bg-center bg-no-repeat px-8 py-12;
+      width: 17rem;
+
+      .list {
+        @apply space-y-8 uppercase text-white;
+
+        .item {
+          @apply flex items-center gap-x-4;
+
+          .number {
+            @apply flex h-9 w-9 items-center justify-center rounded-full border border-white;
+          }
+
+          .info {
+            @apply flex flex-col leading-4;
+
+            .step {
+              @apply text-light-gray text-sm font-thin;
+            }
+
+            .title {
+              @apply font-medium;
+            }
+          }
+
+          &.active {
+            .number {
+              @apply bg-light-blue border-light-blue text-black;
+            }
+          }
+        }
+      }
+    }
+
+    .formContainer {
+      @apply px-24 pt-10;
+      width: 40rem;
+
+      .title {
+        @apply text-marine-blue text-3xl font-bold;
+      }
+
+      .desc {
+        @apply text-cool-gray mt-2 block;
+      }
+
+      .form {
+        @apply mt-8 flex flex-col justify-between;
+        height: 77%;
+
+        .fieldsContainer {
+          @apply space-y-6 font-medium;
+
+          .field {
+            .label {
+              @apply flex justify-between text-sm;
+
+              label {
+                @apply text-marine-blue;
+              }
+
+              .errorText {
+                @apply text-strawberry-red invisible opacity-0 transition;
+              }
+            }
+
+            input {
+              @apply text-marine-blue hover:border-marine-blue mt-1 w-full cursor-pointer rounded-lg border px-4 py-3 outline-none transition;
+            }
+
+            &.error {
+              .label .errorText {
+                @apply visible opacity-100;
+              }
+
+              input {
+                @apply border-strawberry-red;
+              }
+            }
+          }
+        }
+
+        .btnContainer {
+          @apply flex items-center justify-between;
+
+          .back {
+            @apply text-cool-gray hover:text-marine-blue transition;
+
+            &.hide {
+              @apply invisible;
+            }
+          }
+
+          .next {
+            @apply bg-marine-blue text-light-gray hover:bg-marine-blue/90 rounded px-5 py-2 transition hover:text-white hover:shadow-lg;
+          }
+        }
+      }
+    }
+  }
+}
