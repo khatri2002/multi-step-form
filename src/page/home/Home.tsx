@@ -1,5 +1,8 @@
 import classNames from "classnames";
 import styles from "./Home.module.scss";
+import IconArcade from "../../assets/images/icon-arcade.svg";
+import IconAdvanced from "../../assets/images/icon-advanced.svg";
+import IconPro from "../../assets/images/icon-pro.svg";
 
 const Home = () => {
   return (
@@ -65,7 +68,8 @@ const Home = () => {
             </li>
           </ul>
         </div>
-        <div className={styles.formContainer}>
+        {/* step-1 starts */}
+        {/* <div className={styles.contentContainer}>
           <h2 className={styles.title}>Personal info</h2>
           <span className={styles.desc}>
             Please provide your name, email address, and phone number.
@@ -129,7 +133,77 @@ const Home = () => {
               </button>
             </div>
           </form>
+        </div> */}
+        {/* step-1 ends */}
+
+        {/* step-2 starts */}
+        <div className={styles.contentContainer}>
+          <h2 className={styles.title}>Select your plan</h2>
+          <span className={styles.desc}>
+            You have the option of monthly or yearly billing.
+          </span>
+          <form className={styles.form}>
+            <div>
+              <div className={styles.radioContainer}>
+                <label htmlFor="arcade" className={styles.radio}>
+                  <input id="arcade" type="radio" name="plan" />
+                  <div className={styles.item}>
+                    <img src={IconArcade} alt="icon-arcade" />
+                    <div className={styles.bottom}>
+                      <span className={styles.radioTitle}>Arcade</span>
+                      <span className={styles.radioDesc}>&#36;9/mo</span>
+                    </div>
+                  </div>
+                </label>
+                <label htmlFor="advanced" className={styles.radio}>
+                  <input id="advanced" type="radio" name="plan" />
+                  <div className={styles.item}>
+                    <img src={IconAdvanced} alt="icon-advanced" />
+                    <div className={styles.bottom}>
+                      <span className={styles.radioTitle}>Advanced</span>
+                      <span className={styles.radioDesc}>&#36;12/mo</span>
+                    </div>
+                  </div>
+                </label>
+                <label htmlFor="pro" className={styles.radio}>
+                  <input id="pro" type="radio" name="plan" />
+                  <div className={styles.item}>
+                    <img src={IconPro} alt="icon-pro" />
+                    <div className={styles.bottom}>
+                      <span className={styles.radioTitle}>Pro</span>
+                      <span className={styles.radioDesc}>&#36;15/mo</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div className={styles.toggleContainer}>
+                <span className={classNames({ [styles.active]: true })}>
+                  Monthly
+                </span>
+                <label htmlFor="duration" className={styles.toggle}>
+                  <input id="duration" type="checkbox" />
+                </label>
+                <span className={classNames({ [styles.active]: false })}>
+                  Yearly
+                </span>
+              </div>
+            </div>
+            <div className={styles.btnContainer}>
+              <button
+                className={classNames({
+                  [styles.back]: true,
+                  [styles.hide]: false,
+                })}
+              >
+                Go Back
+              </button>
+              <button type="submit" className={styles.next}>
+                Next Step
+              </button>
+            </div>
+          </form>
         </div>
+        {/* step-2 ends */}
       </div>
     </main>
   );

@@ -41,7 +41,76 @@
       }
     }
 
-    .formContainer {
+    // step-1 starts
+    // .contentContainer {
+    //   @apply px-24 pt-10;
+    //   width: 40rem;
+
+    //   .title {
+    //     @apply text-marine-blue text-3xl font-bold;
+    //   }
+
+    //   .desc {
+    //     @apply text-cool-gray mt-2 block;
+    //   }
+
+    //   .form {
+    //     @apply mt-8 flex flex-col justify-between;
+    //     height: 77%;
+
+    //     .fieldsContainer {
+    //       @apply space-y-6 font-medium;
+
+    //       .field {
+    //         .label {
+    //           @apply flex justify-between text-sm;
+
+    //           label {
+    //             @apply text-marine-blue;
+    //           }
+
+    //           .errorText {
+    //             @apply text-strawberry-red invisible opacity-0 transition;
+    //           }
+    //         }
+
+    //         input {
+    //           @apply text-marine-blue hover:border-marine-blue mt-1 w-full cursor-pointer rounded-lg border px-4 py-3 outline-none transition;
+    //         }
+
+    //         &.error {
+    //           .label .errorText {
+    //             @apply visible opacity-100;
+    //           }
+
+    //           input {
+    //             @apply border-strawberry-red;
+    //           }
+    //         }
+    //       }
+    //     }
+
+    //     .btnContainer {
+    //       @apply flex items-center justify-between;
+
+    //       .back {
+    //         @apply text-cool-gray hover:text-marine-blue transition;
+
+    //         &.hide {
+    //           @apply invisible;
+    //         }
+    //       }
+
+    //       .next {
+    //         @apply bg-marine-blue text-light-gray hover:bg-marine-blue/90 rounded px-5 py-2 transition hover:text-white hover:shadow-lg;
+    //       }
+    //     }
+    //   }
+    // }
+    // step-1 ends
+
+    // step-2 starts
+    .contentContainer {
       @apply px-24 pt-10;
       width: 40rem;
 
@@ -57,33 +126,62 @@
         @apply mt-8 flex flex-col justify-between;
         height: 77%;
 
-        .fieldsContainer {
-          @apply space-y-6 font-medium;
+        .radioContainer {
+          @apply flex gap-x-4;
 
-          .field {
-            .label {
-              @apply flex justify-between text-sm;
+          .radio {
+            @apply relative w-full;
 
-              label {
-                @apply text-marine-blue;
+            input {
+              @apply invisible absolute opacity-0;
+
+              &:checked + .item {
+                @apply border-purplish-blue bg-pastel-blue/10;
+              }
+            }
+
+            .item {
+              @apply flex h-40 cursor-pointer flex-col items-start justify-between rounded-lg border px-4 py-5 transition;
+
+              .bottom {
+                .radioTitle {
+                  @apply text-marine-blue block text-lg font-medium;
+                }
+                .radioDesc {
+                  @apply text-cool-gray block text-sm;
+                }
               }
 
-              .errorText {
-                @apply text-strawberry-red invisible opacity-0 transition;
+              &:hover {
+                @apply border-purplish-blue;
               }
+            }
+          }
+        }
+
+        .toggleContainer {
+          @apply bg-cool-gray/10 mt-6 flex items-center justify-center gap-x-5 rounded-lg p-3 text-sm font-medium text-gray-400;
+
+          .active {
+            @apply text-marine-blue;
+          }
+
+          .toggle {
+            @apply bg-marine-blue relative h-5 w-9 cursor-pointer rounded-full;
+
+            &:before {
+              content: "";
+              left: 3px;
+              @apply absolute bottom-0 top-0 my-auto h-3 w-3 rounded-full bg-white transition;
             }
 
             input {
-              @apply text-marine-blue hover:border-marine-blue mt-1 w-full cursor-pointer rounded-lg border px-4 py-3 outline-none transition;
+              @apply invisible absolute opacity-0;
             }
 
-            &.error {
-              .label .errorText {
-                @apply visible opacity-100;
-              }
-
-              input {
-                @apply border-strawberry-red;
+            &:has(input:checked) {
+              &:before {
+                transform: translateX(18px);
               }
             }
           }
@@ -106,5 +204,6 @@
         }
       }
     }
+    // step-2 ends
   }
 }
