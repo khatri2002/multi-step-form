@@ -1,0 +1,69 @@
+.container {
+  @apply px-24 pt-10;
+  width: 40rem;
+
+  .title {
+    @apply text-3xl font-bold text-marine-blue;
+  }
+
+  .desc {
+    @apply mt-2 block text-cool-gray;
+  }
+
+  .form {
+    @apply mt-8 flex flex-col justify-between;
+    height: 77%;
+
+    .fieldsContainer {
+      @apply space-y-6 font-medium;
+
+      .field {
+        .label {
+          @apply flex justify-between text-sm;
+
+          label {
+            @apply text-marine-blue;
+          }
+
+          .errorText {
+            @apply invisible text-strawberry-red opacity-0 transition;
+          }
+        }
+
+        input {
+          @apply mt-1 w-full cursor-pointer rounded-lg border px-4 py-3 text-marine-blue outline-none transition hover:border-marine-blue;
+        }
+
+        &.error {
+          .label .errorText {
+            @apply visible opacity-100;
+          }
+
+          input {
+            @apply border-strawberry-red;
+          }
+        }
+      }
+    }
+
+    .btnContainer {
+      @apply flex items-center justify-between;
+
+      .back {
+        @apply text-cool-gray transition hover:text-marine-blue;
+
+        &.hide {
+          @apply invisible;
+        }
+      }
+
+      .next {
+        @apply rounded bg-marine-blue px-5 py-2 text-light-gray transition hover:bg-marine-blue/90 hover:text-white hover:shadow-lg;
+      }
+    }
+  }
+
+  &.hide {
+    @apply hidden;
+  }
+}

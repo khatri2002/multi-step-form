@@ -1,0 +1,40 @@
+.box {
+  @apply flex rounded-xl bg-white p-4;
+  height: 37.5rem;
+
+  .sidebarContainer {
+    background-image: url("../../assets/images/bg-sidebar-desktop.svg");
+    @apply h-full bg-contain bg-center bg-no-repeat px-8 py-12;
+    width: 17rem;
+
+    .list {
+      @apply space-y-8 uppercase text-white;
+
+      .item {
+        @apply flex items-center gap-x-4;
+
+        .number {
+          @apply flex h-9 w-9 items-center justify-center rounded-full border border-white duration-700;
+        }
+
+        .info {
+          @apply flex flex-col leading-4;
+
+          .step {
+            @apply text-sm font-thin text-light-gray;
+          }
+
+          .title {
+            @apply font-medium;
+          }
+        }
+
+        &.active {
+          .number {
+            @apply border-light-blue bg-light-blue text-black;
+          }
+        }
+      }
+    }
+  }
+}

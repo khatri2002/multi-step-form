@@ -1,0 +1,102 @@
+.container {
+  @apply px-24 pt-10;
+  width: 40rem;
+
+  .title {
+    @apply text-3xl font-bold text-marine-blue;
+  }
+
+  .desc {
+    @apply mt-2 block text-cool-gray;
+  }
+
+  .form {
+    @apply mt-8 flex flex-col justify-between;
+    height: 77%;
+
+    .radioContainer {
+      @apply flex gap-x-4;
+
+      .radio {
+        @apply relative w-full;
+
+        input {
+          @apply invisible absolute opacity-0;
+
+          &:checked + .item {
+            @apply border-purplish-blue bg-pastel-blue/10;
+          }
+        }
+
+        .item {
+          @apply flex h-40 cursor-pointer flex-col items-start justify-between rounded-lg border px-4 py-5 transition;
+
+          .bottom {
+            .radioTitle {
+              @apply block text-lg font-medium text-marine-blue;
+            }
+            .radioDesc {
+              @apply block text-sm text-cool-gray;
+            }
+          }
+
+          &:hover {
+            @apply border-purplish-blue;
+          }
+        }
+      }
+    }
+
+    .toggleContainer {
+      @apply mt-6 flex items-center justify-center gap-x-5 rounded-lg bg-cool-gray/10 p-3 text-sm font-medium text-gray-400;
+
+      .label {
+        @apply transition;
+
+        &.active {
+          @apply text-marine-blue;
+        }
+      }
+
+      .toggle {
+        @apply relative h-5 w-9 cursor-pointer rounded-full bg-marine-blue;
+
+        &:before {
+          content: "";
+          left: 3px;
+          @apply absolute bottom-0 top-0 my-auto h-3 w-3 rounded-full bg-white transition;
+        }
+
+        input {
+          @apply invisible absolute opacity-0;
+        }
+
+        &:has(input:checked) {
+          &:before {
+            transform: translateX(18px);
+          }
+        }
+      }
+    }
+
+    .btnContainer {
+      @apply flex items-center justify-between;
+
+      .back {
+        @apply text-cool-gray transition hover:text-marine-blue;
+
+        &.hide {
+          @apply invisible;
+        }
+      }
+
+      .next {
+        @apply rounded bg-marine-blue px-5 py-2 text-light-gray transition hover:bg-marine-blue/90 hover:text-white hover:shadow-lg;
+      }
+    }
+  }
+
+  &.hide {
+    @apply hidden;
+  }
+}
