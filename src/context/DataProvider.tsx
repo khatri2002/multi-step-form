@@ -4,7 +4,7 @@ import { DataContextValue, DataProviderProps } from "./type";
 const DataContext = createContext<DataContextValue | null>(null);
 
 const DataProvider = ({ children }: DataProviderProps) => {
-  const [activeStep, setActiveStep] = useState<number>(3);
+  const [activeStep, setActiveStep] = useState<number>(4);
   const incrementStep = () => setActiveStep((prev) => prev + 1);
   const decrementStep = () => setActiveStep((prev) => prev - 1);
 

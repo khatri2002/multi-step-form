@@ -4,6 +4,7 @@ import Step2 from "../../components/step-2/Step2";
 import Sidebar from "../../components/sidebar/Sidebar";
 import DataProvider from "../../context/DataProvider";
 import Step3 from "../../components/step-3/Step3";
+import Step4 from "../../components/step-4/Step4";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
           <Step1 />
           <Step2 />
           <Step3 />
+          <Step4 />
         </Sidebar>
       </main>
     </DataProvider>

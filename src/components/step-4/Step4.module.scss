@@ -1,0 +1,57 @@
+.container {
+  .box {
+    @apply rounded-xl bg-light-gray/20 p-6;
+
+    .planContainer {
+      @apply flex items-center justify-between;
+
+      .label {
+        .title {
+          @apply block font-medium text-marine-blue;
+        }
+
+        .desc {
+          @apply block cursor-pointer text-sm text-cool-gray underline;
+        }
+      }
+
+      .value {
+        @apply font-medium text-marine-blue;
+      }
+    }
+
+    .addOnsContainer {
+      @apply relative mt-11;
+
+      &:before {
+        content: "";
+        height: 1px;
+        @apply absolute -top-4 w-full bg-light-gray;
+      }
+
+      .item {
+        @apply flex items-center justify-between space-y-3;
+
+        .label {
+          @apply text-sm text-cool-gray;
+        }
+
+        .value {
+          @apply text-marine-blue;
+        }
+      }
+    }
+  }
+
+  .total {
+    @apply mt-5 flex items-center justify-between px-6;
+
+    .label {
+      @apply text-sm text-cool-gray;
+    }
+
+    .value {
+      @apply text-xl font-bold text-purplish-blue;
+    }
+  }
+}
