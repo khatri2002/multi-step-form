@@ -7,7 +7,7 @@ import { Inputs } from "./types";
 import StepsLayout from "../steps-layout/StepsLayout";
 
 const Step2 = () => {
-  const { activeStep, incrementStep } = UseDataContext();
+  const { activeStep, handleSetActiveStep } = UseDataContext();
   const { register, handleSubmit, watch } = useForm<Inputs>({
     defaultValues: {
       plan: data.plans[0].key,
@@ -15,7 +15,8 @@ const Step2 = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => incrementStep();
+  const onSubmit: SubmitHandler<Inputs> = (data) =>
+    handleSetActiveStep(activeStep + 1);
 
   return (
     <StepsLayout

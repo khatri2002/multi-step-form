@@ -7,7 +7,7 @@ import { UseDataContext } from "../../context/DataProvider";
 import StepsLayout from "../steps-layout/StepsLayout";
 
 const Step1 = () => {
-  const { activeStep, incrementStep } = UseDataContext();
+  const { activeStep, handleSetActiveStep } = UseDataContext();
 
   const {
     register,
@@ -15,7 +15,8 @@ const Step1 = () => {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => incrementStep();
+  const onSubmit: SubmitHandler<Inputs> = (data) =>
+    handleSetActiveStep(activeStep + 1);
 
   return (
     <StepsLayout

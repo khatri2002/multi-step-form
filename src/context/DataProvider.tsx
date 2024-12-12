@@ -5,11 +5,10 @@ const DataContext = createContext<DataContextValue | null>(null);
 
 const DataProvider = ({ children }: DataProviderProps) => {
   const [activeStep, setActiveStep] = useState<number>(4);
-  const incrementStep = () => setActiveStep((prev) => prev + 1);
-  const decrementStep = () => setActiveStep((prev) => prev - 1);
+  const handleSetActiveStep = (step: number) => setActiveStep(step);
 
   return (
-    <DataContext.Provider value={{ activeStep, incrementStep, decrementStep }}>
+    <DataContext.Provider value={{ activeStep, handleSetActiveStep }}>
       {children}
     </DataContext.Provider>
   );

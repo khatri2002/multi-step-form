@@ -1,7 +1,6 @@
 export type DataContextValue = {
   activeStep: number;
-  incrementStep: () => void;
-  decrementStep: () => void;
+  handleSetActiveStep: (step: number) => void;
 };
 
 export type DataProviderProps = {

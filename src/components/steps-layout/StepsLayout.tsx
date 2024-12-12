@@ -11,7 +11,7 @@ const StepsLayout = ({
   onSubmit,
   children,
 }: StepsLayoutProps) => {
-  const { decrementStep } = UseDataContext();
+  const { activeStep, handleSetActiveStep } = UseDataContext();
   return (
     <>
       <div
@@ -32,7 +32,7 @@ const StepsLayout = ({
               })}
               onClick={(e) => {
                 e.preventDefault();
-                decrementStep();
+                handleSetActiveStep(activeStep - 1);
               }}
             >
               Go Back

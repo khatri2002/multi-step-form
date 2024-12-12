@@ -6,9 +6,10 @@ import { Inputs } from "./types";
 import { data } from "./data";
 
 const Step3 = () => {
-  const { activeStep, incrementStep } = UseDataContext();
+  const { activeStep, handleSetActiveStep } = UseDataContext();
   const { register, handleSubmit } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (data) => incrementStep();
+  const onSubmit: SubmitHandler<Inputs> = (data) =>
+    handleSetActiveStep(activeStep + 1);
 
   return (
     <StepsLayout
