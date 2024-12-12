@@ -7,7 +7,7 @@ import { Inputs } from "./types";
 import StepsLayout from "../steps-layout/StepsLayout";
 
 const Step2 = () => {
-  const { activeStep, incrementStep, decrementStep } = UseDataContext();
+  const { activeStep, incrementStep } = UseDataContext();
   const { register, handleSubmit, watch } = useForm<Inputs>({
     defaultValues: {
       plan: data.plans[0].key,
@@ -39,7 +39,7 @@ const Step2 = () => {
                   <img src={plan.icon.img} alt={plan.icon.alt} />
                   <div className={styles.bottom}>
                     <span className={styles.radioTitle}>{plan.title}</span>
-                    <span className={styles.radioDesc}>&#36;{plan.desc}</span>
+                    <span className={styles.radioDesc}>{plan.desc}</span>
                   </div>
                 </div>
               </label>

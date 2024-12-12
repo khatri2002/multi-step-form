@@ -10,7 +10,7 @@ export const data: Data = {
     {
       key: "arcade",
       title: "Arcade",
-      desc: "9/mo",
+      desc: "$9/mo",
       icon: {
         img: IconArcade,
         alt: "icon-arcade",
@@ -19,7 +19,7 @@ export const data: Data = {
     {
       key: "advanced",
       title: "Advanced",
-      desc: "12/mo",
+      desc: "$12/mo",
       icon: {
         img: IconAdvanced,
         alt: "icon-advanced",
@@ -28,7 +28,7 @@ export const data: Data = {
     {
       key: "pro",
       title: "Pro",
-      desc: "15/mo",
+      desc: "$15/mo",
       icon: {
         img: IconPro,
         alt: "icon-pro",

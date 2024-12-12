@@ -1,0 +1,60 @@
+.container {
+  @apply space-y-4;
+
+  .item {
+    @apply relative flex cursor-pointer items-center gap-x-5 rounded-lg border p-5 transition hover:border-marine-blue;
+
+    input {
+      @apply invisible absolute opacity-0;
+
+      &:checked + .customInput {
+        @apply border-purplish-blue bg-purplish-blue;
+      }
+    }
+
+    .customInput {
+      @apply flex items-center justify-center rounded border transition;
+
+      .checkmark {
+        @apply inline-block h-5 w-5 rotate-45;
+      }
+
+      .stem {
+        @apply absolute bg-white;
+        width: 2px;
+        height: 10px;
+        left: 11px;
+        top: 4px;
+      }
+
+      .kick {
+        @apply absolute bg-white;
+        width: 6px;
+        height: 2px;
+        left: 7px;
+        top: 13px;
+      }
+    }
+
+    .text {
+      @apply w-full;
+
+      .title {
+        @apply block font-medium text-marine-blue;
+      }
+
+      .desc {
+        @apply block text-sm text-cool-gray;
+        margin-top: 1px;
+      }
+    }
+
+    .price {
+      @apply text-purplish-blue;
+    }
+
+    &:has(input:checked) {
+      @apply border-marine-blue bg-purplish-blue/5;
+    }
+  }
+}
