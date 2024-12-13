@@ -35,16 +35,16 @@ const Step3 = () => {
           return (
             <label key={index} htmlFor={addOn.key} className={styles.item}>
               <input id={addOn.key} type="checkbox" {...register(addOn.key)} />
-              <div className={styles.customInput}>
+              <span className={styles.customInput}>
                 <span className={styles.checkmark}>
                   <div className={styles.stem}></div>
                   <div className={styles.kick}></div>
                 </span>
-              </div>
-              <div className={styles.text}>
+              </span>
+              <span className={styles.text}>
                 <span className={styles.label}>{addOn.label}</span>
                 <span className={styles.desc}>{addOn.desc}</span>
-              </div>
+              </span>
               <span className={styles.price}>
                 {formData.step2.duration === "Monthly"
                   ? `+$${addOn.price.monthly}/mo`
