@@ -63,9 +63,9 @@ const Step2 = () => {
                   {...register("plan")}
                   value={plan.key}
                 />
-                <div className={styles.item}>
+                <span className={styles.item}>
                   <img src={plan.icon.img} alt={plan.icon.alt} />
-                  <div className={styles.bottom}>
+                  <span className={styles.bottom}>
                     <span className={styles.radioTitle}>{plan.label}</span>
                     <span className={styles.radioDesc}>
                       {watch("duration") // checkbox true & false values
@@ -80,8 +80,8 @@ const Step2 = () => {
                     >
                       {plan.yearlyDiscountText}
                     </span>
-                  </div>
-                </div>
+                  </span>
+                </span>
               </label>
             );
           })}
