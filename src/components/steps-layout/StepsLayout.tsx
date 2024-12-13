@@ -22,7 +22,7 @@ const StepsLayout = ({
           [styles.hide]: hide,
         })}
       >
-        <h2 className={styles.title}>{title}</h2>
+        <h1 className={styles.title}>{title}</h1>
         <span className={styles.desc}>{desc}</span>
         <form className={styles.form} onSubmit={onSubmit}>
           {children}
