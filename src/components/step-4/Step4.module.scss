@@ -11,7 +11,7 @@
         }
 
         .desc {
-          @apply block cursor-pointer text-sm text-cool-gray underline;
+          @apply block cursor-pointer text-sm text-cool-gray underline transition hover:text-purplish-blue;
         }
       }
 

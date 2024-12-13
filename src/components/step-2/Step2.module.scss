@@ -13,7 +13,7 @@
     }
 
     .item {
-      @apply flex h-40 cursor-pointer flex-col items-start justify-between rounded-lg border px-4 py-5 transition;
+      @apply flex cursor-pointer flex-col items-start gap-y-8 rounded-lg border px-4 py-5 transition;
 
       .bottom {
         .radioTitle {
@@ -21,6 +21,13 @@
         }
         .radioDesc {
           @apply block text-sm text-cool-gray;
+        }
+        .discount {
+          @apply hidden text-xs text-marine-blue;
+
+          &.show {
+            @apply inline-block;
+          }
         }
       }
 

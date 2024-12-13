@@ -1,0 +1,16 @@
+.container {
+  @apply mb-4 flex flex-col items-center justify-center px-24 py-10;
+  width: 40rem;
+
+  img {
+    @apply w-16;
+  }
+
+  h2 {
+    @apply mt-5 text-3xl font-medium text-marine-blue;
+  }
+
+  span {
+    @apply mt-3 text-center text-cool-gray;
+  }
+}

@@ -6,10 +6,22 @@ import { Inputs } from "./types";
 import { data } from "./data";
 
 const Step3 = () => {
-  const { activeStep, handleSetActiveStep } = UseDataContext();
+  const { activeStep, handleSetActiveStep, formData, handleSetFormData } =
+    UseDataContext();
   const { register, handleSubmit } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (data) =>
+  const onSubmit: SubmitHandler<Inputs> = (userData) => {
+    const addOns = data.addOns
+      .filter((addOn) => userData[addOn.key])
+      .map((addOn) => ({
+        label: addOn.label,
+        price:
+          formData.step2.duration === "Monthly"
+            ? addOn.price.monthly
+            : addOn.price.yearly,
+      }));
+    handleSetFormData({ ...formData, step3: { addOns } });
     handleSetActiveStep(activeStep + 1);
+  };
 
   return (
     <StepsLayout
@@ -30,10 +42,14 @@ const Step3 = () => {
                 </span>
               </div>
               <div className={styles.text}>
-                <span className={styles.title}>{addOn.title}</span>
+                <span className={styles.label}>{addOn.label}</span>
                 <span className={styles.desc}>{addOn.desc}</span>
               </div>
-              <span className={styles.price}>{addOn.price}</span>
+              <span className={styles.price}>
+                {formData.step2.duration === "Monthly"
+                  ? `+$${addOn.price.monthly}/mo`
+                  : `+$${addOn.price.yearly}/yr`}
+              </span>
             </label>
           );
         })}

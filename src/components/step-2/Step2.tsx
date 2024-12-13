@@ -7,16 +7,43 @@ import { Inputs } from "./types";
 import StepsLayout from "../steps-layout/StepsLayout";
 
 const Step2 = () => {
-  const { activeStep, handleSetActiveStep } = UseDataContext();
+  const { activeStep, handleSetActiveStep, formData, handleSetFormData } =
+    UseDataContext();
   const { register, handleSubmit, watch } = useForm<Inputs>({
     defaultValues: {
       plan: data.plans[0].key,
-      duration: false, //checkbox -> data.duration.option1~false & data.duration.option2~true
+      duration: false,
     },
   });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) =>
+  const onSubmit: SubmitHandler<Inputs> = (userData) => {
+    // include plan 'label' & 'price'
+    const plan = data.plans.find((plan) => plan.key === userData.plan);
+    const label = plan ? plan.label : "-";
+    const price = plan
+      ? userData.duration
+        ? plan.price.yearly
+        : plan.price.monthly
+      : 0;
+
+    // include duration 'label'
+    // checkbox false & true values
+    const duration = userData.duration
+      ? data.duration.option2.label
+      : data.duration.option1.label;
+
+    handleSetFormData({
+      ...formData,
+      step2: {
+        plan: {
+          label: label,
+          price: price,
+        },
+        duration: duration,
+      },
+    });
     handleSetActiveStep(activeStep + 1);
+  };
 
   return (
     <StepsLayout
@@ -39,8 +66,20 @@ const Step2 = () => {
                 <div className={styles.item}>
                   <img src={plan.icon.img} alt={plan.icon.alt} />
                   <div className={styles.bottom}>
-                    <span className={styles.radioTitle}>{plan.title}</span>
-                    <span className={styles.radioDesc}>{plan.desc}</span>
+                    <span className={styles.radioTitle}>{plan.label}</span>
+                    <span className={styles.radioDesc}>
+                      {watch("duration") // checkbox true & false values
+                        ? `$${plan.price.yearly}/yr`
+                        : `$${plan.price.monthly}/mo`}
+                    </span>
+                    <span
+                      className={classNames({
+                        [styles.discount]: true,
+                        [styles.show]: watch("duration"),
+                      })}
+                    >
+                      {plan.yearlyDiscountText}
+                    </span>
                   </div>
                 </div>
               </label>

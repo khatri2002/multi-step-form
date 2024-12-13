@@ -7,7 +7,8 @@ import { UseDataContext } from "../../context/DataProvider";
 import StepsLayout from "../steps-layout/StepsLayout";
 
 const Step1 = () => {
-  const { activeStep, handleSetActiveStep } = UseDataContext();
+  const { activeStep, handleSetActiveStep, formData, handleSetFormData } =
+    UseDataContext();
 
   const {
     register,
@@ -15,8 +16,17 @@ const Step1 = () => {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) =>
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    handleSetFormData({
+      ...formData,
+      step1: {
+        name: data.name,
+        email: data.email,
+        phoneNumber: data.phoneNumber,
+      },
+    });
     handleSetActiveStep(activeStep + 1);
+  };
 
   return (
     <StepsLayout

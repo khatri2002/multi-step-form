@@ -28,6 +28,10 @@
       .next {
         @apply rounded bg-marine-blue px-5 py-2 text-light-gray transition hover:bg-marine-blue/90 hover:text-white hover:shadow-lg;
       }
+
+      .confirm {
+        @apply rounded bg-purplish-blue px-7 py-2 text-white transition hover:enabled:opacity-80 hover:enabled:shadow-lg disabled:cursor-not-allowed disabled:bg-gray-500;
+      }
     }
   }
 

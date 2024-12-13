@@ -6,21 +6,30 @@ export const data: Data = {
   addOns: [
     {
       key: "online-service",
-      title: "Online service",
+      label: "Online service",
       desc: "Access to multiplayer games",
-      price: "+$1/mo",
+      price: {
+        monthly: 1,
+        yearly: 10,
+      },
     },
     {
       key: "larger-storage",
-      title: "Larger storage",
+      label: "Larger storage",
       desc: "Extra 1TB of cloud save",
-      price: "+$2/mo",
+      price: {
+        monthly: 2,
+        yearly: 20,
+      },
     },
     {
       key: "customizable-profile",
-      title: "Customizable Profile",
+      label: "Customizable Profile",
       desc: "Custom theme on your profile",
-      price: "+$2/mo",
+      price: {
+        monthly: 2,
+        yearly: 20,
+      },
     },
   ],
 };

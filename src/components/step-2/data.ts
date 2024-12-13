@@ -9,8 +9,12 @@ export const data: Data = {
   plans: [
     {
       key: "arcade",
-      title: "Arcade",
-      desc: "$9/mo",
+      label: "Arcade",
+      price: {
+        monthly: 9,
+        yearly: 90,
+      },
+      yearlyDiscountText: "2 months free",
       icon: {
         img: IconArcade,
         alt: "icon-arcade",
@@ -18,8 +22,12 @@ export const data: Data = {
     },
     {
       key: "advanced",
-      title: "Advanced",
-      desc: "$12/mo",
+      label: "Advanced",
+      price: {
+        monthly: 12,
+        yearly: 120,
+      },
+      yearlyDiscountText: "2 months free",
       icon: {
         img: IconAdvanced,
         alt: "icon-advanced",
@@ -27,8 +35,12 @@ export const data: Data = {
     },
     {
       key: "pro",
-      title: "Pro",
-      desc: "$15/mo",
+      label: "Pro",
+      price: {
+        monthly: 15,
+        yearly: 150,
+      },
+      yearlyDiscountText: "2 months free",
       icon: {
         img: IconPro,
         alt: "icon-pro",

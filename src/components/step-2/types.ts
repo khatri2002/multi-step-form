@@ -3,8 +3,12 @@ export type Data = {
   desc: string;
   plans: Array<{
     key: string;
-    title: string;
-    desc: string;
+    label: string;
+    price: {
+      monthly: number;
+      yearly: number;
+    };
+    yearlyDiscountText: string;
     icon: {
       img: string;
       alt: string;

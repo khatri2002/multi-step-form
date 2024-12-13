@@ -7,8 +7,11 @@ export type Data = {
   desc: string;
   addOns: Array<{
     key: fieldKeys;
-    title: string;
+    label: string;
     desc: string;
-    price: string;
+    price: {
+      monthly: number;
+      yearly: number;
+    };
   }>;
 };
