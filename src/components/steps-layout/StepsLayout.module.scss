@@ -1,9 +1,17 @@
 .container {
-  @apply px-24 pt-10;
+  @apply absolute top-24 mx-4 rounded-lg bg-white px-5 pb-7 pt-7 shadow-xl sm:static sm:mx-0 sm:px-14 sm:pb-0 sm:pt-10 sm:shadow-none lg:px-24;
   width: 40rem;
+  @media (width < 1024px) {
+    width: 65%;
+  }
+  @media (width < 640px) {
+    width: auto;
+    max-height: 30rem;
+    overflow: auto;
+  }
 
   .title {
-    @apply text-3xl font-bold text-marine-blue;
+    @apply text-2xl font-bold text-marine-blue sm:text-3xl;
   }
 
   .desc {
@@ -13,29 +21,41 @@
   .form {
     @apply mt-8 flex flex-col justify-between;
     height: 77%;
-
-    .btnContainer {
-      @apply flex items-center justify-between;
-
-      .back {
-        @apply text-cool-gray transition hover:text-marine-blue;
-
-        &.hide {
-          @apply invisible;
-        }
-      }
-
-      .next {
-        @apply rounded bg-marine-blue px-5 py-2 text-light-gray transition hover:bg-marine-blue/90 hover:text-white hover:shadow-lg;
-      }
-
-      .confirm {
-        @apply rounded bg-purplish-blue px-7 py-2 text-white transition hover:enabled:opacity-80 hover:enabled:shadow-lg disabled:cursor-not-allowed disabled:bg-gray-500;
-      }
-    }
   }
 
   &.hide {
     @apply hidden;
+  }
+}
+
+.btnContainer {
+  @apply flex items-center justify-between;
+
+  .back {
+    @apply text-cool-gray transition hover:text-marine-blue;
+
+    &.hide {
+      @apply invisible;
+    }
+  }
+
+  .next {
+    @apply rounded bg-marine-blue px-5 py-2 text-light-gray transition hover:bg-marine-blue/90 hover:text-white hover:shadow-lg;
+  }
+
+  .confirm {
+    @apply rounded bg-purplish-blue px-7 py-2 text-white transition hover:enabled:opacity-80 hover:enabled:shadow-lg disabled:cursor-not-allowed disabled:bg-gray-500;
+  }
+
+  &.hide {
+    @apply hidden;
+  }
+
+  &.desktop {
+    @apply hidden sm:flex;
+  }
+
+  &.mobile {
+    @apply absolute bottom-0 w-full bg-white p-4 sm:hidden;
   }
 }

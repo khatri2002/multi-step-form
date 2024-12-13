@@ -1,21 +1,21 @@
 .fieldsContainer {
-  @apply space-y-6 font-medium;
+  @apply space-y-4 font-medium sm:space-y-6;
 
   .field {
     .label {
-      @apply flex justify-between text-sm;
+      @apply flex items-center justify-between text-sm;
 
       label {
         @apply text-marine-blue;
       }
 
       .errorText {
-        @apply invisible text-strawberry-red opacity-0 transition;
+        @apply invisible text-xs text-strawberry-red opacity-0 transition sm:text-base;
       }
     }
 
     input {
-      @apply mt-1 w-full cursor-pointer rounded-lg border px-4 py-3 text-marine-blue outline-none transition hover:border-marine-blue;
+      @apply mt-1 w-full cursor-pointer rounded-lg border px-3 py-2 text-marine-blue outline-none transition hover:border-marine-blue sm:px-4 sm:py-3;
     }
 
     &.error {

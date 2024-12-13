@@ -1,5 +1,5 @@
 .radioContainer {
-  @apply flex gap-x-4;
+  @apply flex flex-col gap-x-4 gap-y-3 sm:flex-row;
 
   .radio {
     @apply relative w-full;
@@ -13,14 +13,21 @@
     }
 
     .item {
-      @apply flex cursor-pointer flex-col items-start gap-y-8 rounded-lg border px-4 py-5 transition;
+      @apply flex cursor-pointer flex-row items-center gap-x-4 gap-y-8 rounded-lg border px-4 py-3 transition sm:flex-col sm:items-start sm:py-5;
+
+      img {
+        @apply w-auto;
+        @media (width < 640px) {
+          width: 2.2rem;
+        }
+      }
 
       .bottom {
         .radioTitle {
-          @apply block text-lg font-medium text-marine-blue;
+          @apply block text-base font-medium text-marine-blue sm:text-lg;
         }
         .radioDesc {
-          @apply block text-sm text-cool-gray;
+          @apply block text-sm text-cool-gray sm:text-sm;
         }
         .discount {
           @apply hidden text-xs text-marine-blue;

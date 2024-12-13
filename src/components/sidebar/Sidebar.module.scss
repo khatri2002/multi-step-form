@@ -1,14 +1,24 @@
 .box {
-  @apply flex rounded-xl bg-white p-4;
+  @apply flex flex-col rounded-xl bg-transparent sm:flex-row sm:bg-white sm:p-4;
   height: 37.5rem;
+  @media (width < 640px) {
+    height: auto;
+  }
 
   .sidebarContainer {
     background-image: url("../../assets/images/bg-sidebar-desktop.svg");
-    @apply h-full bg-contain bg-center bg-no-repeat px-8 py-12;
     width: 17rem;
+    @apply h-full rounded-lg bg-cover bg-center bg-no-repeat px-4 py-8 sm:py-12 lg:px-8;
+    @media (width < 1024px) {
+      width: 35%;
+    }
+    @media (width < 640px) {
+      background-image: url("../../assets/images/bg-sidebar-mobile.svg");
+      @apply h-40 w-screen rounded-none;
+    }
 
     .list {
-      @apply space-y-8 uppercase text-white;
+      @apply flex flex-row justify-center gap-x-5 gap-y-8 uppercase text-white sm:flex-col;
 
       .item {
         @apply flex items-center gap-x-4;
@@ -18,7 +28,7 @@
         }
 
         .info {
-          @apply flex flex-col leading-4;
+          @apply hidden flex-col leading-4 sm:flex;
 
           .step {
             @apply text-sm font-thin text-light-gray;

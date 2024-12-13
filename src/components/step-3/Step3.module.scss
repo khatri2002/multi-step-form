@@ -1,8 +1,8 @@
 .container {
-  @apply space-y-4;
+  @apply space-y-3 sm:space-y-4;
 
   .item {
-    @apply relative flex cursor-pointer items-center gap-x-5 rounded-lg border p-5 transition hover:border-marine-blue;
+    @apply relative flex cursor-pointer items-center gap-x-5 rounded-lg border p-3 transition hover:border-purplish-blue sm:p-5;
 
     input {
       @apply invisible absolute opacity-0;
@@ -40,7 +40,7 @@
       @apply w-full;
 
       .label {
-        @apply block font-medium text-marine-blue;
+        @apply block text-sm font-medium text-marine-blue sm:text-base;
       }
 
       .desc {
@@ -50,11 +50,11 @@
     }
 
     .price {
-      @apply text-purplish-blue;
+      @apply text-sm text-purplish-blue sm:text-base;
     }
 
     &:has(input:checked) {
-      @apply border-marine-blue bg-purplish-blue/5;
+      @apply border-purplish-blue bg-purplish-blue/5;
     }
   }
 }

@@ -1,6 +1,9 @@
 .container {
-  @apply mb-4 flex flex-col items-center justify-center px-24 py-10;
+  @apply absolute top-24 mx-4 mb-4 flex flex-col items-center justify-center rounded-lg bg-white px-6 py-20 shadow-xl sm:static sm:mx-0 sm:px-24 sm:py-10 sm:shadow-none;
   width: 40rem;
+  @media (width < 640px) {
+    width: auto;
+  }
 
   img {
     @apply w-16;
