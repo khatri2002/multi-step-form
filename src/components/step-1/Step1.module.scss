@@ -10,7 +10,7 @@
       }
 
       .errorText {
-        @apply invisible text-xs text-strawberry-red opacity-0 transition sm:text-base;
+        @apply invisible text-strawberry-red opacity-0 transition;
       }
     }
 
