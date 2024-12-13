@@ -37,8 +37,8 @@ const Step3 = () => {
               <input id={addOn.key} type="checkbox" {...register(addOn.key)} />
               <span className={styles.customInput}>
                 <span className={styles.checkmark}>
-                  <div className={styles.stem}></div>
-                  <div className={styles.kick}></div>
+                  <span className={styles.stem}></span>
+                  <span className={styles.kick}></span>
                 </span>
               </span>
               <span className={styles.text}>
